@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="WARN">
+  <appenders>
+
+    <Console name="Console" target="SYSTEM_OUT" follow="true">
+      <LcLayout/>
+    </Console>
+
+    <XMDFile name="SERVICE-LOG" fileName="request.log" xmdFilePath="/opt/logs" rolloverMax="10" sizeBasedTriggeringSize="1G">
+    </XMDFile>
+    <XMDFile name="INFO-LOG" fileName="info.log" xmdFilePath="/opt/logs" rolloverMax="10" sizeBasedTriggeringSize="1G">
+      <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>
+    </XMDFile>
+    <XMDFile name="ERROR-LOG" fileName="error.log" xmdFilePath="/opt/logs" rolloverMax="10" sizeBasedTriggeringSize="1G">
+      <ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY"/>
+    </XMDFile>
+    <XMDFile name="WARN-LOG" fileName="warn.log" xmdFilePath="/opt/logs" rolloverMax="10" sizeBasedTriggeringSize="1G">
+      <ThresholdFilter level="warn" onMatch="ACCEPT" onMismatch="DENY"/>
+    </XMDFile>
+
+    <Scribe name="RemoteInfoLog">
+      <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>
+      <LcLayout/>
+    </Scribe>
+    <Async name="AsyncInfoLog" blocking="false">
+      <AppenderRef ref="RemoteInfoLog"/>
+    </Async>
+    <Async name="AsyncErrorLog" blocking="false">
+      <AppenderRef ref="remoteErrorLog"/>
+    </Async>
+    <Scribe name="remoteErrorLog">
+      <ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY"/>
+      <LcLayout/>
+    </Scribe>
+  </appenders>
+
+  <loggers>
+    <logger name="com.sankuai.adp.mtzp" level="DEBUG" additivity="false">
+      <appender-ref ref="Console"/>
+      <appender-ref ref="SERVICE-LOG"/>
+      <appender-ref ref="INFO-LOG"/>
+      <appender-ref ref="ERROR-LOG"/>
+      <appender-ref ref="WARN-LOG"/>
+      <appender-ref ref="AsyncInfoLog"/>
+      <appender-ref ref="AsyncErrorLog"/>
+    </logger>
+
+    <root level="INFO">
+      <appender-ref ref="Console"/>
+      <appender-ref ref="SERVICE-LOG"/>
+      <appender-ref ref="ERROR-LOG"/>
+      <appender-ref ref="WARN-LOG"/>
+      <appender-ref ref="AsyncErrorLog"/>
+    </root>
+  </loggers>
+</configuration>
