@@ -17,13 +17,13 @@ public class LocalPseudonymsService implements PseudonymsService {
   @Override
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
     Pseudonym pseudonym = pseudonymsDao.findUserByName(username);
-    if(pseudonym == null) {
+    if (pseudonym == null) {
       throw new UsernameNotFoundException("Not found");
     }
     return new User(
         pseudonym.getUserName(),
         pseudonym.getCryptedPassword(),
         AuthorityUtils.commaSeparatedStringToAuthorityList(
-            pseudonym.getUser().getPermission().toString()));
+            pseudonym.getUser().getRole().toString()));
   }
 }

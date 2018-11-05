@@ -1,0 +1,7 @@
+.container-center {
+    margin: auto;
+}
+
+.input-radius {
+    border-radius: calc(height / 2);
+}

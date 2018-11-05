@@ -11,7 +11,7 @@ public class User {
   private String avatarUrl;
   private String schoolName;
   private String stuId;
-  private Integer permission;
+  private Role role;
 
   public static enum Gender {
     GRIL,
