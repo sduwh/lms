@@ -1,4 +1,4 @@
-package com.sduwh.sduwhlms.server.domain;
+package org.sduwh.lms.server.domain;
 
 public enum Role {
   USER,

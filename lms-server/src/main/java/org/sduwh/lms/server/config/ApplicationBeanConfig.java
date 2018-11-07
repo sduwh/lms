@@ -1,8 +1,8 @@
-package com.sduwh.sduwhlms.server.config;
+package org.sduwh.lms.server.config;
 
-import com.sduwh.sduwhlms.server.service.MailService;
-import com.sduwh.sduwhlms.server.service.impl.LocalPseudonymsService;
-import com.sduwh.sduwhlms.server.service.impl.RemoteMailService;
+import org.sduwh.lms.server.service.MailService;
+import org.sduwh.lms.server.service.impl.LocalPseudonymsService;
+import org.sduwh.lms.server.service.impl.RemoteMailService;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;

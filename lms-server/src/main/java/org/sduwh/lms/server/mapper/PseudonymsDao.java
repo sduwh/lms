@@ -1,6 +1,6 @@
-package com.sduwh.sduwhlms.server.mapper;
+package org.sduwh.lms.server.mapper;
 
-import com.sduwh.sduwhlms.server.domain.Pseudonym;
+import org.sduwh.lms.server.domain.Pseudonym;
 
 import org.apache.ibatis.annotations.One;
 import org.apache.ibatis.annotations.Param;

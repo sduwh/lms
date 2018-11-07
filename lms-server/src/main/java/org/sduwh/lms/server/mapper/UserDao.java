@@ -1,6 +1,6 @@
-package com.sduwh.sduwhlms.server.mapper;
+package org.sduwh.lms.server.mapper;
 
-import com.sduwh.sduwhlms.server.domain.User;
+import org.sduwh.lms.server.domain.User;
 
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;

@@ -1,8 +1,8 @@
-package com.sduwh.sduwhlms.server.service.impl;
+package org.sduwh.lms.server.service.impl;
 
-import com.sduwh.sduwhlms.server.domain.Pseudonym;
-import com.sduwh.sduwhlms.server.mapper.PseudonymsDao;
-import com.sduwh.sduwhlms.server.service.PseudonymsService;
+import org.sduwh.lms.server.domain.Pseudonym;
+import org.sduwh.lms.server.mapper.PseudonymsDao;
+import org.sduwh.lms.server.service.PseudonymsService;
 
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.User;

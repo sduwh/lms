@@ -1,4 +1,4 @@
-package com.sduwh.sduwhlms.server.config;
+package org.sduwh.lms.server.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package com.sduwh.sduwhlms.server.service;
+package org.sduwh.lms.server.service;
 
 import org.springframework.security.core.userdetails.UserDetailsService;
 

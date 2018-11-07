@@ -1,4 +1,4 @@
-package com.sduwh.sduwhlms.server.controller;
+package org.sduwh.lms.server.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

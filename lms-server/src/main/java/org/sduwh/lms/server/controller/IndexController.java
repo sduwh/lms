@@ -1,6 +1,6 @@
-package com.sduwh.sduwhlms.server.controller;
+package org.sduwh.lms.server.controller;
 
-import com.sduwh.sduwhlms.server.service.MailService;
+import org.sduwh.lms.server.service.MailService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;

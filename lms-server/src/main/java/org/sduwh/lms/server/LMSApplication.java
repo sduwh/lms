@@ -1,4 +1,4 @@
-package com.sduwh.sduwhlms.server;
+package org.sduwh.lms.server;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
