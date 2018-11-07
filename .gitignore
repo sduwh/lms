@@ -83,3 +83,6 @@ Temporary Items
 ### Custom
 .idea
 *.iml
+
+### Some setting file
+src/main/resources/application.properties
