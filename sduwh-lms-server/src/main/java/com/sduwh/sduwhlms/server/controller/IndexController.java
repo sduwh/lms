@@ -17,21 +17,15 @@ public class IndexController {
 
   @PreAuthorize("isAuthenticated()")
   @RequestMapping(value = "/", method = RequestMethod.GET)
-  public String index(Authentication authentication) {
+  public String index() {
     return "index";
   }
 
+  @PreAuthorize("isAuthenticated()")
   @RequestMapping(value = "/send", method = RequestMethod.GET)
   @ResponseBody
-  public String send(
-      @RequestParam("to") String to,
-      @RequestParam("content") String content,
-      Authentication authentication) {
-    if (authentication.isAuthenticated()) {
-      mailService.sendTextEmail(to, "测试mail", content);
-      return "success";
-    } else {
-      return "bad request";
-    }
+  public String send(@RequestParam("to") String to, @RequestParam("content") String content) {
+    mailService.sendTextEmail(to, "测试mail", content);
+    return "success";
   }
 }

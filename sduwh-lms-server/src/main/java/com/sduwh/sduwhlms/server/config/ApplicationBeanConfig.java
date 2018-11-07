@@ -1,7 +1,9 @@
 package com.sduwh.sduwhlms.server.config;
 
 import com.sduwh.sduwhlms.server.service.MailService;
+import com.sduwh.sduwhlms.server.service.UserService;
 import com.sduwh.sduwhlms.server.service.impl.LocalPseudonymsService;
+import com.sduwh.sduwhlms.server.service.impl.LocalUserService;
 import com.sduwh.sduwhlms.server.service.impl.RemoteMailService;
 
 import org.mybatis.spring.annotation.MapperScan;
@@ -15,6 +17,11 @@ public class ApplicationBeanConfig {
   @Bean
   public UserDetailsService getUserDetailsService() {
     return new LocalPseudonymsService();
+  }
+
+  @Bean
+  public UserService getUserService() {
+    return new LocalUserService();
   }
 
   @Bean

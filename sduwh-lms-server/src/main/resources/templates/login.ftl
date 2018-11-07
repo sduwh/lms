@@ -24,7 +24,8 @@
     </div>
     <div class="checkbox mb-3">
         <label>
-            <input type="checkbox" value="remember-me"> Remember me
+            <input type="checkbox" value="remember-me"> Remember me, do not have a count?
+            <a href="/users/new">Create one!</a>
         </label>
     </div>
     <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>

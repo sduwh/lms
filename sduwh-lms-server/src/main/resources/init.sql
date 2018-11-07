@@ -7,6 +7,7 @@ CREATE TABLE IF NOT EXISTS `users`(
   `school_name` VARCHAR(1024),
   `stu_id` VARCHAR(128),
   `role` VARCHAR(128) NOT NULL,
+  `is_identified` TINYINT DEFAULT 0,
   `is_deleted` TINYINT DEFAULT 0,
   `create_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	`update_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -51,3 +52,7 @@ CREATE TABLE IF NOT EXISTS `enrollments`(
 	PRIMARY KEY(`id`),
 	KEY `idx_course_id` (`course_id`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- insert first user as admin
+INSERT INTO `users`(`name`, `gender`, `email`, `role`) VALUES('error', 1, '123@126.com', 'ADMIN');
+INSERT INTO `pseudonyms`(`user_id`, `user_name`, `crypted_password`) VALUES(1, 'error', md5('123456'));

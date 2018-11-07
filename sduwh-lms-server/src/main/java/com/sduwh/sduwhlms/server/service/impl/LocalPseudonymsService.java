@@ -4,7 +4,6 @@ import com.sduwh.sduwhlms.server.domain.Pseudonym;
 import com.sduwh.sduwhlms.server.mapper.PseudonymsDao;
 import com.sduwh.sduwhlms.server.service.PseudonymsService;
 
-import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -20,10 +19,10 @@ public class LocalPseudonymsService implements PseudonymsService {
     if (pseudonym == null) {
       throw new UsernameNotFoundException("Not found");
     }
-    return new User(
-        pseudonym.getUserName(),
-        pseudonym.getCryptedPassword(),
-        AuthorityUtils.commaSeparatedStringToAuthorityList(
-            pseudonym.getUser().getRole().toString()));
+    User.UserBuilder userBuilder = User.withUsername(pseudonym.getUserName());
+    userBuilder
+        .password(pseudonym.getCryptedPassword())
+        .roles(pseudonym.getUser().getRole().toString());
+    return userBuilder.build();
   }
 }

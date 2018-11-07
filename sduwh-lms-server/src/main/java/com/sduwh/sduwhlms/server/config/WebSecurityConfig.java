@@ -33,7 +33,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         .permitAll()
         .and()
         .authorizeRequests()
-        .antMatchers("/**/favicon.ico", "/**/*.css", "/**/*.js", "/login")
+        .antMatchers("/**/favicon.ico", "/**/*.css", "/**/*.js", "/login","/users/new")
         .permitAll()
         .anyRequest()
         .authenticated()
